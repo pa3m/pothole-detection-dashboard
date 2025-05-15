@@ -10,6 +10,7 @@ dependencies = [
     "numpy>=2.2.5",
     "opencv-python-headless>=4.11.0.86",
     "pandas>=2.2.3",
+    "plotly>=6.1.0",
     "rasterio>=1.4.3",
     "shapely>=2.1.0",
     "streamlit>=1.45.1",
