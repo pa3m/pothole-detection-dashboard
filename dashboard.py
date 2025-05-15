@@ -1,5 +1,5 @@
 import streamlit as st
-from ultralytics import YOLO
+# from ultralytics import YOLO
 import cv2
 import numpy as np
 from pathlib import Path
@@ -26,7 +26,7 @@ st.markdown(
 
 # Sidebar controls
 st.sidebar.header("🔧 Settings")
-image_folder = st.sidebar.text_input("Image Folder", "yolo_dataset2/visualizations/train/stitched/")
+image_folder = st.sidebar.text_input("Image Folder", "stitched/")
 model_path = st.sidebar.text_input("YOLO Model Path", "runs/detect/train6/weights/best.pt")
 confidence = st.sidebar.slider("Confidence Threshold", 0.0, 1.0, 0.25, 0.01)
 fiter = st.sidebar.slider("PCI Filter", 0.0, 100.0, 1.0, 1.0)
@@ -35,15 +35,15 @@ fiter = st.sidebar.slider("PCI Filter", 0.0, 100.0, 1.0, 1.0)
 st.header("Aerial Data")
 
 # Load class names
-class_file = Path("UAV-PDD2023/class_names.txt")
+class_file = Path("class_names.txt")
 classes = [line.strip() for line in class_file.read_text().splitlines() if line.strip()]
 selected_classes = st.sidebar.multiselect("Defect Types", classes, default=classes)
 
-@st.cache_resource
-def load_yolo_model(path):
-    return YOLO(path)
+# @st.cache_resource
+# def load_yolo_model(path):
+#     return YOLO(path)
 
-model = load_yolo_model(model_path)
+# model = load_yolo_model(model_path)
 
 # List images
 image_dir = Path(image_folder)
