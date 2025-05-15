@@ -89,7 +89,7 @@ with col6:
 
 st.markdown("---")
 st.header("Satellite Data")
-tiff_path = st.sidebar.text_input("TIFF File Path", "pothole_satellite.tif")
+tiff_path = st.sidebar.text_input("TIFF File Path", "compressed.tif")
 if tiff_path:
     tif_file = Path(tiff_path)
     if tif_file.exists():
